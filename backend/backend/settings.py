@@ -9,10 +9,7 @@ environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# read th .env file
-environ.Env.read_env(env_file=str(BASE_DIR) + '/.env')
-
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY', 'django-insecure')
 
 DEBUG = env('DEBUG', default=False)
 
